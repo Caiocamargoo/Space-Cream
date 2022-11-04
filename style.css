@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --f-heading: 'Staatliches', cursive;
+  --f-texting: 'Palanquin', sans-serif;
+
+  --hue: 250;
+  --bg-primary: hsla(312, 91%, 96%, 1);
+  --bg-secondary: hsla(233, 100%, 97%, 1);
+  --bg-header: hsla(218, 17%, 62%, 1);
+  --bg-th: hsla(275, 18%, 79%, 1);
+  --fc-header: hsla(0, 0%, 100%, 1);
+  --fc-p: hsla(274, 84%, 12%, 1);
+  --fc-h2: hsla(232, 17%, 35%, 1);
+
+  font-size: 62%;
+  --fs-heading: 4.0rem;
+  --fs-texting: 2.0rem;
+}
+
+body {
+  font-family: var(--f-heading);
+  background-color: var(--bg-secondary);
+}
+
+.page {
+  min-width: 38rem;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-header);
+}
+
+header p {
+  display: none;
+}
+
+header .logo img {
+  margin: 3rem;
+}
+
+header .name-project {
+  background-color: var(--bg-th);
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  text-align: center;
+  color: var(--fc-header);
+  font-size: var(--fs-heading);
+}
+
+header #pbig {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  display: grid;
+  gap: 3.2rem;
+  background-color: var(--bg-secondary);
+  padding: 1.4rem 3.2rem 6rem;
+  text-align: center;
+  align-items: center;
+}
+
+header p {
+  background-color: var(--bg-secondary);
+  font-family: var(--f-texting);
+  color: var(--fc-p);
+  font-size: var(--fs-texting);
+  font-weight: 400;
+  line-height: 15px;
+  text-align: center;
+  display: block;
+}
+
+header #psmall {
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  font-family: var(--f-heading);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.8rem;
+
+  color: var(--fc-h2);
+
+  font-weight: 400;
+  font-size: var(--fs-texting);
+  line-height: 3.4rem;
+}
+
+.card h2 span {
+  background-color: var(--bg-primary);
+  border-radius: 2rem;
+  padding: 2px 2.0rem;
+}
+
+#imgE, #imgF {
+  display: none;
+}
+
+.wrapper footer {
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+}
+
+.wrapper footer a {
+  text-decoration: none;
+  color: #4A4E69;
+  opacity: 0.5;
+}
+
+.wrapper footer a strong {
+  color: #15161d;
+}
+
+.wrapper footer a p {
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center;
+}
+
+
+@media (min-width: 900px) {
+  body {
+    height: 100vh;
+    margin: 0 auto;
+  }
+  .page {
+    display: flex;
+  }
+
+  header #pbig {
+    display: block;
+  }
+
+  header #psmall {
+    display: none;
+  }
+
+  header {
+    max-width: 37.7rem;
+    height: 100vh;
+  }
+  header p {
+    background-color: var(--bg-header);
+    display: block;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: var(--fc-header);
+    font-family: var(--f-texting);
+  }
+
+
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "B A"
+    "B D"
+    "C D"
+    ;
+  }
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
+  main div:nth-child(5) {
+    grid-area: E;
+    display: none;
+  }
+
+  main div:nth-child(6) {
+    grid-area: F;
+    display: none;
+  }
+
+  
+}
+
+@media (min-width: 1200px) {
+  #imgE, #imgF {
+    display: block;
+  }
+  
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "A B E"
+    "D B F"
+    "D C F"
+   ;
+  }
+
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
+  main div:nth-child(5) {
+    grid-area: E;
+    display: block;
+  }
+
+  main div:nth-child(6) {
+    grid-area: F;
+    display: block;
+  }
+}
